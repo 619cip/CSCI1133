@@ -12,7 +12,7 @@ def magnitude(p1, p2):
     return ( (p2[0] - p1[0])**2 + (p2[1] - p1[1])**2 ) ** 0.5
 
 magn_1, magn_2, magn_3 = magnitude(pt_1, pt_2), magnitude(pt_1, pt_3), magnitude(pt_2, pt_3)
-print('Distance between points 1 and 2', magn_1)
-print('Distance between points 1 and 3', magn_2)
-print('Distance between points 2 and 3', magn_3)
+print('Distance between points 1 and 2:', magn_1)
+print('Distance between points 1 and 3:', magn_2)
+print('Distance between points 2 and 3:', magn_3)
 print('Perimeter of triangle:', (magn_1 + magn_2 + magn_3))
