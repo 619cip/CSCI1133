@@ -202,7 +202,7 @@ if __name__ == '__main__':
     print()
     print(sound2(13, True))  # Should output Meow
     print(sound2(50, False)) # Should output Bark
-    print(sound2(111, True)) # Should output Meow   
+    print(sound2(111, True)) # Should output Meow 
     print(sound2(-1, False)) # Should output Yip
 
 if __name__ == '__main__':
