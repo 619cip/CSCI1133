@@ -74,15 +74,15 @@ def avoid_sz(names):
         return an empty list (list)
     '''
     res, has_sz, no_sz = [], [], []
-
+    
     # Seperate the list of names into 2 lists
     # has_sz : contains 's' and 'z'
     # no_sz : contains no 's' or 'z'
-    for i in names:
-        if 's' in i.lower() or 'z' in i.lower():
-            has_sz.append(i)
+    for name in names:
+        if 's' in name.lower() or 'z' in name.lower():
+            has_sz.append(name)
         else:
-            no_sz.append(i)
+            no_sz.append(name)
     
     # Check case if there is 1 more s/z's than non s/z
     if len(has_sz) - len(no_sz) >= 1: 
@@ -175,5 +175,3 @@ if __name__ == '__main__':
     # 'Kush Patel', 'Rijul Mahajan', 'Eric Fredericks',
     # 'Athreyi Badithela', 'Adrika Dasgupta', 'Jennie Lim',
     # 'Abdul Rahman Al Hosni', 'Tia Truong']
-
-
