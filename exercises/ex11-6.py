@@ -1,0 +1,1 @@
+print("Recursive solutions are simpler than their iterative equivalent for certain types of problems")

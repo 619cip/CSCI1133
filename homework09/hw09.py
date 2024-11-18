@@ -1,5 +1,3 @@
-file_dir = ''
-
 def total_hours(filename):
     '''
     Purpose:
@@ -10,7 +8,7 @@ def total_hours(filename):
         Returns the sum of all the hours the employee has worked
         for the week.
     '''
-    fp = open(f'{file_dir}{filename}')
+    fp = open(filename)
 
     total = 0
     for line in fp:
@@ -33,10 +31,10 @@ def label_days(filename):
     days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
 
     data = None
-    with open(f'{file_dir}{filename}') as file:
+    with open(filename) as file:
         data = file.readlines()
 
-    with open(f'{file_dir}labeled_{filename}', 'w') as file:
+    with open(f'labeled_{filename}', 'w') as file:
         for i in range(7):
             file.write(f'{days[i]}: {data[i]}')
 
@@ -57,7 +55,7 @@ def stretch_model(fname_in, fname_out):
     factor = 2
 
     try:
-        with open(f'{file_dir}{fname_in}') as file:
+        with open(fname_in) as file:
             for line in file:
                 if line[0] == 'v':
                     vertices.append(line)
@@ -66,7 +64,7 @@ def stretch_model(fname_in, fname_out):
     except (FileNotFoundError, FileExistsError):
         return -1
 
-    with open(f'{file_dir}{fname_out}', 'w') as file:
+    with open(fname_out, 'w') as file:
         for data in vertices:
             vertex = data.split()
             vertex[2] = str(float(vertex[2]) * factor)
@@ -93,7 +91,7 @@ def count_votes(district, office):
     winner, votes = None, 0
 
     # grab the offices ran and voting data
-    with open(f'{file_dir}{district}') as file:
+    with open(district) as file:
         # python doing the dirty work !!!
         offices = [x for x in file.readline().split(',')]
         offices[-1] = offices[-1].strip('\n')
